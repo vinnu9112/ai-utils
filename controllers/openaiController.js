@@ -1,12 +1,14 @@
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 dotenv.config();
-const { Configuration, OpenAIApi } = require("openai");
+import { Configuration, OpenAIApi } from "openai";
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
+
 const openai = new OpenAIApi(configuration);
 
-exports.summaryController = async (req, res) => {
+export const summaryController = async (req, res) => {
   try {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
@@ -27,7 +29,8 @@ exports.summaryController = async (req, res) => {
     });
   }
 };
-exports.paragraphController = async (req, res) => {
+
+export const paragraphController = async (req, res) => {
   try {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
@@ -48,7 +51,8 @@ exports.paragraphController = async (req, res) => {
     });
   }
 };
-exports.chatbotController = async (req, res) => {
+
+export const chatbotController = async (req, res) => {
   try {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
@@ -72,7 +76,8 @@ exports.chatbotController = async (req, res) => {
     });
   }
 };
-exports.jsController = async (req, res) => {
+
+export const jsController = async (req, res) => {
   try {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
@@ -93,7 +98,8 @@ exports.jsController = async (req, res) => {
     });
   }
 };
-exports.imageController = async (req, res) => {
+
+export const imageController = async (req, res) => {
   try {
     const { text } = req.body;
     const { data } = await openai.createImage({

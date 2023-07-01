@@ -1,15 +1,16 @@
-const express = require('express')
-const morgan = require('morgan')
-const cors = require('cors')
-const bodyParser = require('body-parser')
-const colors = require('colors')
-const dotenv = require('dotenv')
-const connectDB = require('./config/db')
-const authRoute = require('./routes/authRoute')
-const openaiRoute = require('./routes/openaiRoutes')
-const errorHandler = require('./middlewares/errorMiddleware')
-const path = require("path")
-const { fileURLToPath } = require("url");
+import express from 'express'
+import morgan from 'morgan';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import colors from 'colors';
+import dotenv from 'dotenv';
+import connectDB from './config/db';
+import authRoute from './routes/authRoute';
+import openaiRoute from './routes/openaiRoutes';
+import errorHandler from './middlewares/errorMiddleware';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
