@@ -8,6 +8,12 @@ const connectDB = require('./config/db')
 const authRoute = require('./routes/authRoute')
 const openaiRoute = require('./routes/openaiRoutes')
 const errorHandler = require('./middlewares/errorMiddleware')
+import path from 'path'
+import { fileURLToPath } from "url";
+
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 //dotenv
 dotenv.config()
@@ -24,6 +30,13 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(morgan('dev'))
 app.use(errorHandler)
+
+app.use(express.static(path.join(__dirname,'./client/build')))
+
+app.use('*', function(req, res){
+    res.sendFile(path.join(__dirname, './client/build/index.html'))
+})
+
 
 const PORT = process.env.PORT || 8080
 
