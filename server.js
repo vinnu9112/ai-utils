@@ -8,7 +8,7 @@ const connectDB = require('./config/db')
 const authRoute = require('./routes/authRoute')
 const openaiRoute = require('./routes/openaiRoutes')
 const errorHandler = require('./middlewares/errorMiddleware')
-import path from 'path'
+import path from "path"
 import { fileURLToPath } from "url";
 
 
