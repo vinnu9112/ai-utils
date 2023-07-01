@@ -1,9 +1,9 @@
-class ErrorResponse extends Error {
+class errorResponse extends Error {
     constructor(message, statusCode) {
       super(message);
       this.statusCode = statusCode;
     }
   }
   
-  export default ErrorResponse;
+  export default errorResponse;
   

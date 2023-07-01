@@ -4,10 +4,10 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import colors from 'colors';
 import dotenv from 'dotenv';
-import connectDB from './config/db';
-import authRoute from './routes/authRoute';
-import openaiRoute from './routes/openaiRoutes';
-import errorHandler from './middlewares/errorMiddleware';
+import connectDB from './config/db.js';
+import authRoute from './routes/authRoute.js';
+import openaiRoute from './routes/openaiRoutes.js';
+import errorHandler from './middlewares/errorMiddleware.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 

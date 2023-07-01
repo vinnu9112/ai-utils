@@ -1,5 +1,5 @@
 import express from 'express';
-import { summaryController, paragraphController, chatbotController, jsController, imageController } from '../controllers/openaiController';
+import { summaryController, paragraphController, chatbotController, jsController, imageController } from '../controllers/openaiController.js';
 
 const router = express.Router();
 

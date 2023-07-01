@@ -1,4 +1,4 @@
-import errorResponse from "../utils/errorResponse";
+import errorResponse from "../utils/errorResponse.js";
 
 const errorHandler = async (err, req, res, next) => {
   let error = { ...err };

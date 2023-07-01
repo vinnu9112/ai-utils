@@ -1,5 +1,5 @@
-import userModel from '../models/userModel';
-import errorResponse from '../utils/errorResponse';
+import userModel from '../models/userModel.js';
+import errorResponse from '../utils/errorResponse.js';
 
 // JWT token
 export const sendToken = (user, statusCode, res) => {
